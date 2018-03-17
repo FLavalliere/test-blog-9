@@ -31,7 +31,6 @@ googleanalytics = ""
 hascjklanguage = false
 i18ndir = "i18n"
 ignorecache = false
-ignorefiles = []
 layoutdir = "layouts"
 logi18nwarnings = false
 metadataformat = "toml"
@@ -262,7 +261,7 @@ workingdir = "."
     subtitle = "Start your free website TODAY"
     title = "Eazy website creation"
   [params.i18n]
-    heroSubtitle = "Great!"
+    herosubtitle = "Great!"
   [params.navigation]
     blogs = "Blogs"
     brand = "The Agency"
@@ -303,7 +302,7 @@ workingdir = "."
     [params.social.data]
       [params.social.data.facebook]
         enable = true
-        link = ""
+        link = "https://www.facebook.com/pages/Acentera"
       [params.social.data.linkedin]
         enable = true
         link = ""
