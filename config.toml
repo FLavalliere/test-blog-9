@@ -1,5 +1,7 @@
+appendport = false
 archetypedir = "archetypes"
-builddrafts = false
+baseurl = "/"
+builddrafts = true
 buildexpired = false
 buildfuture = false
 cachedir = "/tmp/hugo_cache/"
@@ -13,7 +15,8 @@ defaultcontentlanguageinsubdir = false
 defaultlayout = "post"
 disable404 = false
 disablealiases = false
-disablelivereload = false
+disablefastrender = false
+disablelivereload = true
 disablepathtolower = false
 disablerobotstxt = false
 disablerss = false
@@ -23,11 +26,12 @@ enablegitinfo = false
 enablemissingtranslationplaceholders = "false"
 footnoteanchorprefix = ""
 footnotereturnlinkcontents = ""
-forcesyncstatic = "true"
+forcesyncstatic = true
 googleanalytics = ""
 hascjklanguage = false
 i18ndir = "i18n"
 ignorecache = false
+ignorefiles = []
 layoutdir = "layouts"
 logi18nwarnings = false
 metadataformat = "toml"
@@ -44,12 +48,15 @@ pygmentscodefencesguesssyntax = false
 pygmentsoptions = ""
 pygmentsstyle = "monokai"
 pygmentsuseclasses = false
+pygmentsuseclassic = false
 relativeurls = false
 removepathaccents = false
+resourcedir = "resources"
 rsslimit = -1.0
 rssuri = "index.xml"
 sectionpagesmenu = ""
 staticdir = "static"
+summarylength = 70.0
 theme = "hugo-agency-theme"
 themesdir = "themes"
 title = "TitleHere"
@@ -57,7 +64,8 @@ titlecasestyle = "AP"
 uglyurls = false
 usemodtimeasfallback = false
 verbose = true
-watch = true
+watch = false
+workingdir = "."
 
 [blackfriday]
   angledquotes = false
@@ -76,6 +84,7 @@ watch = true
 
 [languages]
   [languages.de]
+    enable = true
     id = "de"
     languagename = "Deutch"
     value = "de"
@@ -88,9 +97,11 @@ watch = true
   [languages.en]
     copyright = "All rights reserved."
     description = "Scriptor is a minimal Hugo blogging theme for writers."
+    enable = true
     id = "en"
     languagecode = "en-us"
     languagename = "English"
+    locked = true
     message = "John Doe is a designer, speaker, and author. He is the Creative Director of Awesome Design studio, co-founder of magazine Camera and a coffee junkie."
     title = "Nice to meet you!"
     value = "en"
@@ -104,6 +115,7 @@ watch = true
   [languages.fr]
     copyright = "Alle Rechte vorbehalten."
     description = "Scriptor ist ein minimalistisches Hugo-Theme für Blogger."
+    enable = true
     id = "fr"
     languagecode = "fr-ca"
     languagename = "Francais"
@@ -112,6 +124,27 @@ watch = true
     title = "Mon Blog!"
     value = "fr"
     weight = 10.0
+
+[[languagessorted]]
+  Lang = "de"
+  LanguageName = "Deutch"
+  Title = ""
+  Weight = 0.0
+  [languagessorted.Cfg]
+
+[[languagessorted]]
+  Lang = "fr"
+  LanguageName = "Francais"
+  Title = "Mon Blog!"
+  Weight = 10.0
+  [languagessorted.Cfg]
+
+[[languagessorted]]
+  Lang = "en"
+  LanguageName = "English"
+  Title = "Nice to meet you!"
+  Weight = 20.0
+  [languagessorted.Cfg]
 
 [menu]
 
@@ -175,7 +208,6 @@ watch = true
     logo = "creative-market.jpg"
   [params.clients_list]
     enable = false
-
   [params.contact]
     buttontext = "Send message"
     email = "your@email.com"
@@ -203,13 +235,13 @@ watch = true
     enable = true
 
     [[params.footer.quicklinks]]
-      link = "#"
       enable = false
+      link = "#"
       text = "Privacy Policy"
 
     [[params.footer.quicklinks]]
-      link = "#"
       enable = false
+      link = "#"
       text = "Terms of Use"
 
     [[params.footer.social]]
@@ -223,30 +255,14 @@ watch = true
     [[params.footer.social]]
       icon = "fa-linkedin"
       name = "linkedin"
-
-
-   [params.social]
-     [params.social.data]
-       [params.social.data.facebook]
-         enable = true
-         link = ""
-       [params.social.data.linkedin]
-         enable = true
-         link = ""
-       [params.social.data.twitter]
-         enable = true
-         link = ""
-     [params.social.keys]
-       facebook = "facebook"
-       linkedin = "linkedin"
-       twitter = "twitter"
-
   [params.hero]
-    background_image = "img/header-bg.jpg"
+    background_image = "/img/about/4.jpg"
     buttontext = "Start"
     href = "https://www.serverlesscdn.com/"
     subtitle = "Start your free website TODAY"
     title = "Eazy website creation"
+  [params.i18n]
+    heroSubtitle = "Great!"
   [params.navigation]
     blogs = "Blogs"
     brand = "The Agency"
@@ -283,6 +299,21 @@ watch = true
         icon = "fa-lock"
         title = "Web"
         url = "#"
+  [params.social]
+    [params.social.data]
+      [params.social.data.facebook]
+        enable = true
+        link = ""
+      [params.social.data.linkedin]
+        enable = true
+        link = ""
+      [params.social.data.twitter]
+        enable = true
+        link = ""
+    [params.social.keys]
+      facebook = "facebook"
+      linkedin = "linkedin"
+      twitter = "twitter"
   [params.team]
     description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde."
     enable = false
